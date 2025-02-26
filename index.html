@@ -17,11 +17,11 @@
             padding: 0;
             background: linear-gradient(to right, #2c3e50, #1c2833);
             text-align: center;
-            color: light gray;
+            color: white;
         }
         header {
             background-color: #1b4f72;
-            color: light gray;
+            color: white;
             padding: 20px;
             font-size: 24px;
             font-weight: 600;
@@ -33,7 +33,7 @@
             padding: 15px;
         }
         nav a {
-            color: light gray;
+            color: white;
             text-decoration: none;
             margin: 0 15px;
             font-weight: 500;
@@ -62,7 +62,7 @@
         }
         footer {
             background-color: #1b4f72;
-            color: light gray;
+            color: white;
             padding: 15px;
             width: 100%;
         }
@@ -82,6 +82,29 @@
         }
         .gallery img:hover {
             transform: scale(1.05);
+        }
+        .whatsapp-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s;
+        }
+        .whatsapp-popup:hover {
+            background-color: #1EBE5D;
+        }
+        .whatsapp-popup img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -123,18 +146,17 @@
         </ul>
         
         <h3 id="blog">Blog</h3>
-        <p>Saya juga berbagi artikel dan tutorial terkait desain arsitektur dan 3D modeling. Berikut beberapa artikel terbaru:</p>
-        <ul>
-            <li><a href="#">Tips Belajar SketchUp untuk Pemula</a></li>
-            <li><a href="#">Cara Membuat Model 3D yang Realistis</a></li>
-            <li><a href="#">Blender vs SketchUp: Mana yang Lebih Baik?</a></li>
-        </ul>
+        <p>Saya juga berbagi artikel dan tutorial terkait desain arsitektur dan 3D modeling.</p>
         
         <h3 id="contact">Kontak</h3>
         <p>Email: example@email.com</p>
         <p>LinkedIn: <a href="#">Profil LinkedIn</a></p>
         <p>Instagram: <a href="#">@username</a></p>
     </div>
+    <a href="https://wa.me/6281234567890" class="whatsapp-popup" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
+        Hubungi Saya
+    </a>
     <footer>
         &copy; 2025 Website Pribadi - Dibuat dengan ❤️
     </footer>
