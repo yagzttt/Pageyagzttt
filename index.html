@@ -88,54 +88,7 @@
 </head>
 <body>
     <header>
-        import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
-
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <header className="bg-white shadow-md fixed top-0 w-full z-50">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <motion.h1
-          className="text-2xl font-bold text-gray-800"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          My Portfolio
-        </motion.h1>
-        
-        <nav className="hidden md:flex space-x-6">
-          <a href="#home" className="text-gray-600 hover:text-blue-600">Home</a>
-          <a href="#portfolio" className="text-gray-600 hover:text-blue-600">Portfolio</a>
-          <a href="#blog" className="text-gray-600 hover:text-blue-600">Blog</a>
-          <a href="#contact" className="text-gray-600 hover:text-blue-600">Contact</a>
-        </nav>
-        
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-      
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden bg-white border-t"
-        >
-          <nav className="flex flex-col py-4 space-y-2 px-6">
-            <a href="#home" className="text-gray-600 hover:text-blue-600">Home</a>
-            <a href="#portfolio" className="text-gray-600 hover:text-blue-600">Portfolio</a>
-            <a href="#blog" className="text-gray-600 hover:text-blue-600">Blog</a>
-            <a href="#contact" className="text-gray-600 hover:text-blue-600">Contact</a>
-          </nav>
-        </motion.div>
-      )}
-    </header>
-  );
-}
-
+        Website Pribadi Saya
     </header>
     <nav>
         <a href="#about">Tentang</a>
@@ -183,11 +136,10 @@ export default function Header() {
         
         <h3 id="contact">Kontak</h3>
         <p>Email: yagzttt@gmail.com</p>
-        <p>LinkedIn: <a href="#">https://www.linkedin.com/in/yoga-adi</a></p>
         <p>Instagram: <a href="#">@yooga_adi___</a></p>
     </div>
     <footer>
-        &copy; 2025 Website Pribadi - ©yagzttt
+        &copy; ©yagzttt 2025
     </footer>
 </body>
 </html>
