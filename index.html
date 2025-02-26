@@ -14,21 +14,21 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #2f2f2f, #b0b0b0);
+            background: linear-gradient(to right, #2c3e50, #1c2833);
             text-align: center;
             color: white;
         }
         header {
-            background: #3a3a3a;
+            background-color: #1b4f72;
             color: white;
-            padding: 60px 20px;
+            padding: 20px;
             font-size: 24px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
         nav {
-            background: #505050;
+            background: #154360;
             padding: 15px;
         }
         nav a {
@@ -39,22 +39,39 @@
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #d0d0d0;
+            color: #a8c0ff;
         }
         .container {
             max-width: 1000px;
             margin: 30px auto;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
             color: #333;
         }
         footer {
-            background-color: #3a3a3a;
+            background-color: #1b4f72;
             color: white;
             padding: 15px;
             width: 100%;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 220px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
