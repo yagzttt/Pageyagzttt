@@ -1,47 +1,167 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
-
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <header className="bg-white shadow-md fixed top-0 w-full z-50">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <motion.h1
-          className="text-2xl font-bold text-gray-800"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          My Portfolio
-        </motion.h1>
-        
-        <nav className="hidden md:flex space-x-6">
-          <a href="#home" className="text-gray-600 hover:text-blue-600">Home</a>
-          <a href="#portfolio" className="text-gray-600 hover:text-blue-600">Portfolio</a>
-          <a href="#blog" className="text-gray-600 hover:text-blue-600">Blog</a>
-          <a href="#contact" className="text-gray-600 hover:text-blue-600">Contact</a>
-        </nav>
-        
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-      
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden bg-white border-t"
-        >
-          <nav className="flex flex-col py-4 space-y-2 px-6">
-            <a href="#home" className="text-gray-600 hover:text-blue-600">Home</a>
-            <a href="#portfolio" className="text-gray-600 hover:text-blue-600">Portfolio</a>
-            <a href="#blog" className="text-gray-600 hover:text-blue-600">Blog</a>
-            <a href="#contact" className="text-gray-600 hover:text-blue-600">Contact</a>
-          </nav>
-        </motion.div>
-      )}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Pribadi</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #2c3e50, #1c2833);
+            text-align: center;
+            color: white;
+        }
+        header {
+            background: url('skema-header.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 60px 20px;
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        nav {
+            background: #154360;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #a8c0ff;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            color: #333;
+        }
+        footer {
+            background-color: #1b4f72;
+            color: white;
+            padding: 15px;
+            width: 100%;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
+        }
+        .profile-img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 4px solid #1b4f72;
+        }
+        .profile-frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 330px;
+            height: 330px;
+            border-radius: 15px;
+            border: 6px solid rgba(0, 255, 255, 0.8);
+            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+            pointer-events: none;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 220px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Website Pribadi Saya
     </header>
-  );
-}
+    <nav>
+        <a href="#about">Tentang</a>
+        <a href="#portfolio">Portofolio</a>
+        <a href="#services">Layanan</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+    <div class="container">
+        <div class="profile-img-container">
+            <img class="profile-img" src="LOGO YAS 2025.png" alt="Foto Profil">
+            <div class="profile-frame"></div>
+        </div>
+        <h2>Selamat Datang!</h2>
+        <p>Halo, ini adalah website pribadi saya untuk berbagi informasi dan portofolio.</p>
+        
+        <h3 id="about">Tentang Saya</h3>
+        <p>Saya seorang desainer grafis dan arsitektur yang fokus pada 3D modeling dan ilustrasi skematik.</p>
+        <p>Saya memiliki pengalaman dalam menggunakan SketchUp, Blender, dan sedang mempelajari Revit untuk meningkatkan kemampuan desain arsitektur.</p>
+        
+        <h3 id="portfolio">Portofolio</h3>
+        <p>Saya telah mengerjakan berbagai proyek desain, mulai dari model 3D hingga ilustrasi skematik. Klik di bawah untuk melihat beberapa karya saya.</p>
+        <div class="gallery">
+            <img src="TIYASAN CAFE 3.jpg" alt="Proyek Eksterior - Tampak Luar">
+            <img src="konten 2.jpg" alt="Proyek Eksterior - Perspektif Malam">
+            <img src="Enscape_2022-02-12-10-06-59.jpg" alt="Proyek Interior - Ruang Utama">
+            <img src="1 A.jpg" alt="Proyek Interior - Ruang Duduk">
+        </div>
+        <p><a href="PORTOFOLIO DESAIN.pdf" target="_blank">Lihat Portofolio Lengkap (PDF)</a></p>
+        
+        <h3 id="services">Layanan</h3>
+        <p>Saya menyediakan berbagai layanan desain, termasuk:</p>
+        <ul>
+            <li>Desain 3D Modeling</li>
+            <li>Ilustrasi Arsitektur</li>
+            <li>Rendering Profesional</li>
+            <li>Entri Data dan Pengetikan</li>
+        </ul>
+        <p>Jika tertarik dengan layanan saya, silakan hubungi saya melalui kontak di bawah.</p>
+        
+        <h3 id="blog">Blog</h3>
+        <p>Saya juga berbagi artikel dan tutorial terkait desain arsitektur dan 3D modeling. Berikut beberapa artikel terbaru:</p>
+        <ul>
+            <li><a href="#">Tips Belajar SketchUp untuk Pemula</a></li>
+            <li><a href="#">Cara Membuat Model 3D yang Realistis</a></li>
+            <li><a href="#">Blender vs SketchUp: Mana yang Lebih Baik?</a></li>
+        </ul>
+        
+        <h3 id="contact">Kontak</h3>
+        <p>Email: example@email.com</p>
+        <p>LinkedIn: <a href="#">Profil LinkedIn</a></p>
+        <p>Instagram: <a href="#">@username</a></p>
+    </div>
+    <footer>
+        &copy; 2025 Website Pribadi - Dibuat dengan ❤️
+    </footer>
+</body>
+</html>
